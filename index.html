@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bootstrap-preventivo</title>
     <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-            crossorigin="anonymous"/>
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"/>
         
 </head>
 <body>
@@ -16,13 +16,13 @@
         <!-- creo la navbar -->
 
         <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
-            <div class="container">
+            <div class="container-fluid">
                 <a class="navbar-brand" href="#">Bool Factory</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHamburger" aria-controls="navbarHamburger" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <div class="nav justify-content-end collapse navbar-collapse" id="navbarHamburger">
+                    <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link" href="#">Home</a>
                         </li>
@@ -37,6 +37,93 @@
             </div>
         </nav>
     </header>
+    
+
+    <!-- main usando grid -->
+    <main>
+        <div class="container pt-5">
+            <div class="row">
+                <!-- divido grid in due colonne -->
+                <!-- colonna di sx -->
+                <div class="col-sm-12 md-10 col-lg-9">
+                    <section class="fs-1 d-flex justify-content-between">Richiesta preventivo</section>
+                    <p class="fs-5">Compila il form per richiedere un preventivo per i nostri servizi di sviluppo.</p>
+
+                    <section class="pt-3 pb-3">
+                        <form id="form-add-userinfo" action="">
+                            <div class="mb-3">
+                                <label for="nome" class="form-label">Nome</label>
+                                <input type="text" name="nome" required class="form-control is-invalid" id="nome" placeholder="Inserisci il tuo nome"> 
+                            </div>
+                            <div class="mb-3">
+                                <label for="cognome" class="form-label">Cognome</label>
+                                <input type="text" name="cognome" required class="form-control is-invalid" id="cognome" placeholder="Inserisci il tuo cognome">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" name="email" required class="form-control is-invalid" id="email" placeholder="Inserisci il tuo indirizzo email">
+                            </div>
+                            <div class="mb-5">
+                                <label for="job" class="form-label">Tipo di lavoro</label>
+                                    <select class="form-select" id="job" name="job"  aria-label="Default select example">
+                                        <option value="Seleziona il tipo di lavoro" selected>Seleziona il tipo di lavoro</option>
+                                        <option value="Backend Development" required>Backend Development</option>
+                                        <option value="Frontend Development" required>Frontend Development</option>
+                                        <option value="Project Analysis" required>Project Analysis</option>
+                                    </select>
+                            </div>
+                            <div class="form-floating mb-5">
+                                <textarea class="form-control" placeholder="add-description" id="floatingTextarea2" style="height: 100px"></textarea>
+                                <label for="floatingTextarea2">Aggiungi una descrizione</label>
+                            </div>
+                            <div class="mb-3">
+                                <label for="code" class="form-label">Codice promozionale(opzionale)</label>
+                                <input type="text" name="code" required class="form-control is-invalid" id="code" placeholder="">
+                            </div>
+                            <div class="form-check pt-2">
+                              <input class="form-check-input" type="checkbox" id="gridCheck" required>
+                                 <label class="form-check-label" for="gridCheck"> Accetto la Privacy Policy</label> 
+                            </div>
+                            <!-- creo una section in cui metto il button e il prezzo finale -->
+
+                            <section class="pt-5 mt-5 d-flex justify-content-evenly">
+                                        
+                                <button type="submit" class="btn btn-primary btn-lg">Calcola preventivo</button>
+                                   
+                                <div class="card border border-0 fs-4">
+                                    <div class="text-center fw-semibold">Prezzo finale</div>
+                                    <div id="price" class="card-body text-center"></div>
+                                </div>
+                            </section>
+                                
+                            
+                        </form>
+                    </section>
+                </div>
+
+                <!-- colonna di dx -->
+                <div class="col-sm-12 md-10 col-lg-3 pt-1">
+
+                    <div class="card border-silver mb-3">
+                        <img src="img/Bool Factory.png" class="card-img-top" alt="Logo Bool Factory che rappresenta una paperella gialla" style="height: 300; width: 200;">
+                        <div class="card-body">
+                            <h5 class="card-title">I nostri contatti</h5>
+                            <p class="card-text">Se hai bosogno di aiuto puoi contattarci:</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">help@boolfactory.test</li>
+                            <li class="list-group-item">0495722901</li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="#" class="card-link">Help desk</a>
+                          </div>
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
     
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
