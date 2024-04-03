@@ -46,11 +46,14 @@
                 <!-- divido grid in due colonne -->
                 <!-- colonna di sx -->
                 <div class="col-sm-12 md-10 col-lg-9">
-                    <section class="fs-1 d-flex justify-content-between">Richiesta preventivo</section>
-                    <p class="fs-5">Compila il form per richiedere un preventivo per i nostri servizi di sviluppo.</p>
+                    <section class="fs-2">
+                        <h2>Richiesta preventivo</h2>
+                        <p class="fs-5">Compila il form per richiedere un preventivo per i nostri servizi di sviluppo.</p>
+                    </section>
+                    
 
-                    <section class="pt-3 pb-3">
-                        <form id="form-richiesta-preventivo" action="">
+                    <div class="pt-3 pb-3">
+                        <form id="form-richiesta-preventivo">
                             <div class="mb-3">
                                 <label for="nome" class="form-label">Nome</label>
                                 <input type="text" name="nome" class="form-control" id="nome" placeholder="Inserisci il tuo nome"> 
@@ -64,12 +67,12 @@
                                 <input type="email" name="email" class="form-control" id="email" placeholder="Inserisci il tuo indirizzo email">
                             </div>
                             <div class="mb-5">
-                                <label for="job" class="form-label">Tipo di lavoro</label>
-                                    <select class="form-select" id="tipoLavoro" name="tipoLavoro"  aria-label="Default select example">
-                                        <option value="Seleziona il tipo di lavoro" selected>Seleziona il tipo di lavoro</option>
-                                        <option value="backendDev" required>Backend Development</option>
-                                        <option value="frontendDev" required>Frontend Development</option>
-                                        <option value="projAnalysys" required>Project Analysis</option>
+                                <label id="job" class="form-label">Tipo di lavoro</label>
+                                    <select class="form-select" id="tipoLavoro" name="tipoLavoro"  aria-label="Default select example" required>
+                                        <option value="" label="Seleziona il tipo di lavoro">Seleziona il tipo di lavoro</option>
+                                        <option value="backendDev">Backend Development</option>
+                                        <option value="frontendDev">Frontend Development</option>
+                                        <option value="projAnalysys">Project Analysis</option>
                                     </select>
                             </div>
                             <div class="form-floating mb-5">
@@ -78,7 +81,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="code" class="form-label">Codice promozionale(opzionale)</label>
-                                <input type="text" name="code" class="form-control" id="code" placeholder="">
+                                <input type="text" name="code" class="form-control" id="code" placeholder="Inserisci un codice promozionale valido">
                             </div>
                             <div class="form-check pt-2">
                               <input class="form-check-input" type="checkbox" id="gridCheck" required>
@@ -86,7 +89,7 @@
                             </div>
                             <!-- creo una section in cui metto il button e il prezzo finale -->
 
-                            <section class="pt-5 mt-5 d-flex justify-content-evenly">
+                            <div class="pt-5 pb-5 mt-5 d-flex justify-content-evenly">
                                         
                                 <button type="submit" class="btn btn-primary btn-lg">Calcola preventivo</button>
                                    
@@ -94,16 +97,16 @@
                                     <div class="text-center fw-semibold">Prezzo finale</div>
                                     <div id="price" class="card-body text-center"></div>
                                 </div>
-                            </section>   
+                            </div>   
                         </form>
-                    </section>
+                    </div>
                 </div>
 
                 <!-- colonna di dx -->
                 <div class="col-sm-12 md-10 col-lg-3 pt-1">
 
                     <div class="card border-silver mb-3">
-                        <img src="img/Bool Factory.png" class="card-img-top" alt="Logo Bool Factory che rappresenta una paperella gialla" style="height: 300; width: 200;">
+                        <img src="img/Bool-Factory.png" class="card-img-top" alt="Logo Bool Factory che rappresenta una paperella gialla" height= "auto" width= "auto">
                         <div class="card-body">
                             <h5 class="card-title">I nostri contatti</h5>
                             <p class="card-text">Se hai bosogno di aiuto puoi contattarci:</p>
@@ -115,8 +118,6 @@
                         <div class="card-body">
                             <a href="#" class="card-link">Help desk</a>
                         </div>
-                    </div>
-
                     </div>
                 </div>
             </div>
