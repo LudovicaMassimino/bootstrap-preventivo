@@ -45,7 +45,7 @@
             <div class="row">
                 <!-- divido grid in due colonne -->
                 <!-- colonna di sx -->
-                <div class="col-sm-12 md-10 col-lg-8">
+                <div class="col-md-10 col-lg-8">
                     <section class="fs-2">
                         <h2>Richiesta preventivo</h2>
                         <p class="fs-5">Compila il form per richiedere un preventivo per i nostri servizi di sviluppo.
@@ -74,7 +74,7 @@
                                 <label id="job" class="form-label">Tipo di lavoro</label>
                                 <select class="form-select" id="tipoLavoro" name="tipoLavoro"
                                     aria-label="Default select example" required>
-                                    <option value="" label="Seleziona il tipo di lavoro">Seleziona il tipo di lavoro
+                                    <option value="0" label="Seleziona il tipo di lavoro">Seleziona il tipo di lavoro
                                     </option>
                                     <option value="backendDev">Backend Development</option>
                                     <option value="frontendDev">Frontend Development</option>
@@ -95,12 +95,12 @@
                                 <input class="form-check-input" type="checkbox" id="gridCheck" required>
                                 <label class="form-check-label " for="gridCheck">Accetto la Privacy Policy</label>
                             </div>
-                            <!-- creo una section in cui metto il button e il prezzo finale -->
-                            <div class="row justify-content-evenly">
-                                <div class="col-lg-4 py-5 d-flex justify-content-center">
+                            <!-- creo una div in cui metto il button e il prezzo finale -->
+                            <div class="row text-center">
+                                <div class="col-lg-6 py-5">
                                     <button type="submit" class="btn btn-primary btn-lg">Calcola preventivo</button>
                                 </div>
-                                <div class="col-lg-4 py-5">
+                                <div class="col-lg-6 py-5">
                                     <div class="card border border-0">
                                         <div class="text-center fs-4 fw-bold">Prezzo finale</div>
                                         <div id="price-formatted" class="card-body text-center fs-4"></div>
@@ -112,7 +112,7 @@
                 </div>
 
                 <!-- colonna di dx -->
-                <div class="col-sm-12 md-10 col-lg-4 pt-1">
+                <div class="col-md-10 col-lg-4 pt-1">
 
                     <div class="card border-silver mb-3">
                         <img src="img/Bool-Factory.png" class="card-img-top"
