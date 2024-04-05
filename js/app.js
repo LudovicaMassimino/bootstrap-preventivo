@@ -1,23 +1,6 @@
 console.log('Bootstrap-preventivo')
 
-/* 
-CONSEGNA: 
-Quando l’utente fa click sul bottone submit del form, il sito deve calcolare l’ammontare del preventivo per le ore di lavoro richieste.
-
-Il prezzo finale è dato dal numero di ore X prezzo orario. Supponiamo per semplicità che ogni progetto richieda lo stesso numero di ore di lavoro (es: 10 ore).
-Il prezzo orario per una commissione varia in questo modo:
-● se la commissione riguarda lo sviluppo backend il prezzo orario è di 20.50€/l’ora
-● se la commissione riguarda lo sviluppo frontend il prezzo orario è di 15.30€/l’ora
-● se la commissione riguarda l’analisi progettuale il prezzo orario è di 33.60€/l’ora
-
-L’utente potrebbe decidere di utilizzare un codice promozionale tra i seguenti: YHDNU32, JANJC63, PWKCN25, SJDPO96, POCIE24.
-Se l’utente inserisce un codice promozionale valido, ha diritto ad uno sconto del 25% sul prezzo finale. Se il codice inserito non è valido, il sito deve informare l’utente che il codice non è valido e il prezzo finale viene calcolato senza applicare sconti.
-
-Il risultato del calcolo del prezzo finale deve essere visualizzato con 2 decimali e il simbolo dell’euro. 
-*/
-
-
-// dichiaro le variabili per il tipo di lavoro:
+// dichiaro le variabili per il tipo di lavoro e :
 const backendDev = 20.50
 const frontendDev = 15.30
 const projAnalysys = 33.60
@@ -26,16 +9,21 @@ const tipoLavoroElement = document.getElementById('tipoLavoro')
 // stabisco un numero di ore fisse:
 const oreFisse = 13;
 
+// dichiaro la variabile per il codice promozionale opzionale e un array di codici validi grazie al quale avrà diritto ad uno sconto del 25% cioè 0.25:
+const scontoElement = document.getElementById('code')
+const codiciValidi = ['YHDNU32' , 'JANJC63' , 'PWKCN25' , 'SJDPO96', 'POCIE24'];
+const percentualeSconto = 0.25
+
 // form:
 const form = document.getElementById('form-richiesta-preventivo')
-form.addEventListener('submit' , calcolaPrezzoProvvisorio)
+
 
 // creo una funzione per individuare l'elemento selezionato nella select e calcolarmi il prezzo provvisorio senza sconti:
 
-function calcolaPrezzoProvvisorio(e) {
+form.addEventListener('submit', function calcolaPrezzo(e) {
     e.preventDefault();
 
-    // pre prendermi la option nella select:
+    // per prendermi la option nella select:
     const selected = tipoLavoroElement.value
     console.log("Il tipo di lavoro selezionato dall'utente è: " + selected)
     
@@ -47,14 +35,53 @@ function calcolaPrezzoProvvisorio(e) {
         onorario = frontendDev;
     } else if (selected === 'projAnalysys') {
         onorario = projAnalysys;
-    } else  if (selected === "Seleziona il tipo di lavoro") {
+    } else  if (selected === 'Seleziona il tipo di lavoro') {
         console.log("Non hai selezionato un'opzione valida")
     }
     
     // calcolo prezzo provvisorio senza sconti opzionali:
     const totProvvisorio = oreFisse * onorario;
-    console.log("Il totale provvisorio è: " + totProvvisorio + " euro")
-}
+    console.log("Il totale provvisorio è: " + totProvvisorio.toFixed(2) + " euro")
+
+    // applico uno codice sconto opzionale tra quelli validi indicati nell'array [codiciValidi]:
+    const sconto = scontoElement.value
+    const incluso = codiciValidi.includes(sconto)
+    console.log("L'utente ha inserito il codice sconto: " + incluso)
+
+    let prezzoFinale = 0;
+    if (incluso) {
+        console.log('Il codice inserito è valido.')
+
+        prezzoFinale = totProvvisorio - totProvvisorio * percentualeSconto
+        prezzoFinale = prezzoFinale.toFixed(2)
+        console.log('Il prezzo finale è: ' + parseFloat(prezzoFinale) + ' euro')
+
+    } else {
+        console.log('Il codice inserito non è valido.')
+
+        prezzoFinale = totProvvisorio
+        prezzoFinale = prezzoFinale.toFixed(2)
+        console.log('Il prezzo finale è: ' + parseFloat(prezzoFinale) + ' euro')
+    }
+    
+
+    const stringa = prezzoFinale.toString();
+    const numDiviso = stringa.split('.');
+    const parteIntera = numDiviso[0];
+    const parteDecimale = numDiviso[1];
+    const prezzoFormattato = '<b>' + ' &euro; ' + parteIntera + '</b>' + "<span style = 'color:gray;'>" + ',' +  parteDecimale + "</span>";
+
+    console.log(prezzoFormattato)
+
+    document.getElementById('price-formatted').innerHTML = prezzoFormattato
+
+})
+
+
+
+
+
+
 
 
 
