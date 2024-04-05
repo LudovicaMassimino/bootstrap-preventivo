@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bootstrap-preventivo</title>
-    <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-    crossorigin="anonymous"/>
-        
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
 </head>
+
 <body>
     <header>
         <!-- creo la navbar -->
 
         <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
-            <div class="container-fluid">
+            <div class="container">
                 <a class="navbar-brand" href="#">Bool Factory</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHamburger" aria-controls="navbarHamburger" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHamburger"
+                    aria-controls="navbarHamburger" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="nav justify-content-end collapse navbar-collapse" id="navbarHamburger">
@@ -37,7 +37,7 @@
             </div>
         </nav>
     </header>
-    
+
 
     <!-- main usando grid -->
     <main>
@@ -45,68 +45,78 @@
             <div class="row">
                 <!-- divido grid in due colonne -->
                 <!-- colonna di sx -->
-                <div class="col-sm-12 md-10 col-lg-9">
+                <div class="col-sm-12 md-10 col-lg-8">
                     <section class="fs-2">
                         <h2>Richiesta preventivo</h2>
-                        <p class="fs-5">Compila il form per richiedere un preventivo per i nostri servizi di sviluppo.</p>
+                        <p class="fs-5">Compila il form per richiedere un preventivo per i nostri servizi di sviluppo.
+                        </p>
                     </section>
-                    
+
 
                     <div class="pt-3 pb-3">
                         <form id="form-richiesta-preventivo">
                             <div class="mb-3">
                                 <label for="nome" class="form-label">Nome</label>
-                                <input type="text" name="nome" class="form-control" id="nome" placeholder="Inserisci il tuo nome"> 
+                                <input type="text" name="nome" class="form-control" id="nome"
+                                    placeholder="Inserisci il tuo nome">
                             </div>
                             <div class="mb-3">
                                 <label for="cognome" class="form-label">Cognome</label>
-                                <input type="text" name="cognome" class="form-control" id="cognome" placeholder="Inserisci il tuo cognome">
+                                <input type="text" name="cognome" class="form-control" id="cognome"
+                                    placeholder="Inserisci il tuo cognome">
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="email" name="email" class="form-control" id="email" placeholder="Inserisci il tuo indirizzo email">
+                                <input type="email" name="email" class="form-control" id="email"
+                                    placeholder="Inserisci il tuo indirizzo email">
                             </div>
                             <div class="mb-5">
                                 <label id="job" class="form-label">Tipo di lavoro</label>
-                                    <select class="form-select" id="tipoLavoro" name="tipoLavoro"  aria-label="Default select example" required>
-                                        <option value="" label="Seleziona il tipo di lavoro">Seleziona il tipo di lavoro</option>
-                                        <option value="backendDev">Backend Development</option>
-                                        <option value="frontendDev">Frontend Development</option>
-                                        <option value="projAnalysys">Project Analysis</option>
-                                    </select>
+                                <select class="form-select" id="tipoLavoro" name="tipoLavoro"
+                                    aria-label="Default select example" required>
+                                    <option value="" label="Seleziona il tipo di lavoro">Seleziona il tipo di lavoro
+                                    </option>
+                                    <option value="backendDev">Backend Development</option>
+                                    <option value="frontendDev">Frontend Development</option>
+                                    <option value="projAnalysys">Project Analysis</option>
+                                </select>
                             </div>
                             <div class="form-floating mb-5">
-                                <textarea class="form-control" placeholder="add-description" id="floatingTextarea2" style="height: 100px"></textarea>
+                                <textarea class="form-control" placeholder="add-description" id="floatingTextarea2"
+                                    style="height: 100px"></textarea>
                                 <label for="floatingTextarea2">Aggiungi una descrizione</label>
                             </div>
                             <div class="mb-3">
                                 <label for="code" class="form-label">Codice promozionale(opzionale)</label>
-                                <input type="text" name="code" class="form-control" id="code" placeholder="Inserisci un codice promozionale valido">
+                                <input type="text" name="code" class="form-control" id="code"
+                                    placeholder="Inserisci un codice promozionale valido">
                             </div>
                             <div class="form-check pt-2">
-                              <input class="form-check-input" type="checkbox" id="gridCheck" required>
-                                 <label class="form-check-label " for="gridCheck">Accetto la Privacy Policy</label> 
+                                <input class="form-check-input" type="checkbox" id="gridCheck" required>
+                                <label class="form-check-label " for="gridCheck">Accetto la Privacy Policy</label>
                             </div>
                             <!-- creo una section in cui metto il button e il prezzo finale -->
-
-                            <div class="pt-5 pb-5 mt-5 d-flex justify-content-evenly">
-                                        
-                                <button type="submit" class="btn btn-primary btn-lg">Calcola preventivo</button>
-                                   
-                                <div class="card border border-0 fs-4">
-                                    <div class="text-center fw-semibold">Prezzo finale</div>
-                                    <div id="price" class="card-body text-center"></div>
+                            <div class="row justify-content-evenly">
+                                <div class="col-lg-4 py-5 d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-primary btn-lg">Calcola preventivo</button>
                                 </div>
-                            </div>   
+                                <div class="col-lg-4 py-5">
+                                    <div class="card border border-0">
+                                        <div class="text-center fs-4 fw-bold">Prezzo finale</div>
+                                        <div id="price-formatted" class="card-body text-center fs-4"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
 
                 <!-- colonna di dx -->
-                <div class="col-sm-12 md-10 col-lg-3 pt-1">
+                <div class="col-sm-12 md-10 col-lg-4 pt-1">
 
                     <div class="card border-silver mb-3">
-                        <img src="img/Bool-Factory.png" class="card-img-top" alt="Logo Bool Factory che rappresenta una paperella gialla" height= "auto" width= "auto">
+                        <img src="img/Bool-Factory.png" class="card-img-top"
+                            alt="Logo Bool Factory che rappresenta una paperella gialla" height="auto" width="auto">
                         <div class="card-body">
                             <h5 class="card-title">I nostri contatti</h5>
                             <p class="card-text">Se hai bosogno di aiuto puoi contattarci:</p>
@@ -123,19 +133,23 @@
             </div>
         </div>
     </main>
-    
+
     <!-- footer -->
     <footer class="py-3 bg-dark text-center text-body-primary mt-auto">
         <span class="text-light d-flex align-items-center justify-content-center">
-            <i class="bi bi-c-circle"></i><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-c-circle pe-1" viewBox="0 0 16 15">
-            <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512"/>
+            <i class="bi bi-c-circle"></i><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                fill="currentColor" class="bi bi-c-circle pe-1" viewBox="0 0 16 15">
+                <path
+                    d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512" />
             </svg>2024 - Tutti i diritti riservati
         </span>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
 
     <script src="js/app.js"></script>
 </body>
+
 </html>
