@@ -41,11 +41,11 @@
 
     <!-- main usando grid -->
     <main>
-        <div class="container pt-5">
+        <div class="container py-5">
             <div class="row">
                 <!-- divido grid in due colonne -->
                 <!-- colonna di sx -->
-                <div class="col-md-10 col-lg-8">
+                <div class="col-lg-8">
                     <section class="fs-2">
                         <h2>Richiesta preventivo</h2>
                         <p class="fs-5">Compila il form per richiedere un preventivo per i nostri servizi di sviluppo.
@@ -53,7 +53,7 @@
                     </section>
 
 
-                    <div class="pt-3 pb-3">
+                    <div class="py-3">
                         <form id="form-richiesta-preventivo" class="needs-validation" novalidate>
                             <div class="mb-3">
                                 <label for="nome" class="form-label">Nome</label>
@@ -75,22 +75,19 @@
                                 <label for="email" class="form-label">Email</label>
                                 <input type="email" name="email" class="form-control" id="email" placeholder="Inserisci il tuo indirizzo email" required>
                                 <div class="invalid-feedback">
-                                    Inserisci un email
+                                    Inserisci un'email
                                 </div>
                             </div>
                             <div class="mb-5">
                                 <label id="job" class="form-label">Tipo di lavoro</label>
                                 <select class="form-select" id="tipoLavoro" name="tipoLavoro"
                                     aria-label="Default select example" required>
-                                    <div class="invalid-feedback">
-                                        Inserisci il tipo di lavoro a cui sei interessato
-                                    </div>
-                                    <option value="0" label="Seleziona il tipo di lavoro">Seleziona il tipo di lavoro
-                                    </option>
+                                        <option value="" label="Seleziona il tipo di lavoro">Seleziona il tipo di lavoro</option>
                                     <option value="backendDev">Backend Development</option>
                                     <option value="frontendDev">Frontend Development</option>
                                     <option value="projAnalysys">Project Analysis</option>
                                 </select>
+                                <div class="invalid-feedback">Inserisci il tipo di lavoro a cui sei interessato</div>
                             </div>
                             <div class="form-floating mb-5">
                                 <textarea class="form-control" placeholder="add-description" id="floatingTextarea2"
@@ -123,9 +120,9 @@
                 </div>
 
                 <!-- colonna di dx -->
-                <div class="col-md-10 col-lg-4 pt-1">
+                <div class="col-lg-4 pt-1">
 
-                    <div class="card border-silver mb-3">
+                    <div class="card border-silver mb-3" >
                         <img src="img/Bool-Factory.png" class="card-img-top"
                             alt="Logo Bool Factory che rappresenta una paperella gialla" height="auto" width="auto">
                         <div class="card-body">
