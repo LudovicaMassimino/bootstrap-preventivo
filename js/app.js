@@ -47,7 +47,8 @@ function calcolaPrezzo() {
     } else if (selected === 'projAnalysys') {
         onorario = projAnalysys;
     } else if (selected === '0') {
-        console.log("Non hai selezionato un'opzione valida")
+        alert('Non hai selezionato un tipo di lavoro valido.')
+        // console.log("Non hai selezionato un'opzione valida")
     }
     
     // calcolo prezzo provvisorio senza sconti opzionali:
