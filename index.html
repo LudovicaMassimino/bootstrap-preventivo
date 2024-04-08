@@ -67,15 +67,24 @@
                                 <label for="cognome" class="form-label">Cognome</label>
                                 <input type="text" name="cognome" class="form-control" id="cognome"
                                 placeholder="Inserisci il tuo cognome" required>
+                                <div class="invalid-feedback">
+                                    Inserisci il cognome
+                                </div>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
                                 <input type="email" name="email" class="form-control" id="email" placeholder="Inserisci il tuo indirizzo email" required>
+                                <div class="invalid-feedback">
+                                    Inserisci un email
+                                </div>
                             </div>
                             <div class="mb-5">
                                 <label id="job" class="form-label">Tipo di lavoro</label>
                                 <select class="form-select" id="tipoLavoro" name="tipoLavoro"
                                     aria-label="Default select example" required>
+                                    <div class="invalid-feedback">
+                                        Inserisci il tipo di lavoro a cui sei interessato
+                                    </div>
                                     <option value="0" label="Seleziona il tipo di lavoro">Seleziona il tipo di lavoro
                                     </option>
                                     <option value="backendDev">Backend Development</option>
