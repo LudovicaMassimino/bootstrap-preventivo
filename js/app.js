@@ -46,8 +46,8 @@ function calcolaPrezzo() {
         onorario = frontendDev;
     } else if (selected === 'projAnalysys') {
         onorario = projAnalysys;
-    } else if (selected === '0') {
-        alert('Non hai selezionato un tipo di lavoro valido.')
+    } else if (selected === '') {
+        // alert('Non hai selezionato un tipo di lavoro valido.')
         // console.log("Non hai selezionato un'opzione valida")
     }
     
