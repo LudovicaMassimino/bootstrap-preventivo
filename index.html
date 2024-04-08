@@ -54,21 +54,23 @@
 
 
                     <div class="pt-3 pb-3">
-                        <form id="form-richiesta-preventivo">
+                        <form id="form-richiesta-preventivo" class="needs-validation" novalidate>
                             <div class="mb-3">
                                 <label for="nome" class="form-label">Nome</label>
                                 <input type="text" name="nome" class="form-control" id="nome"
-                                    placeholder="Inserisci il tuo nome">
+                                    placeholder="Inserisci il tuo nome" required>
+                                    <div class="invalid-feedback">
+                                        Inserisci il nome
+                                    </div>
                             </div>
                             <div class="mb-3">
                                 <label for="cognome" class="form-label">Cognome</label>
                                 <input type="text" name="cognome" class="form-control" id="cognome"
-                                    placeholder="Inserisci il tuo cognome">
+                                placeholder="Inserisci il tuo cognome" required>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="email" name="email" class="form-control" id="email"
-                                    placeholder="Inserisci il tuo indirizzo email">
+                                <input type="email" name="email" class="form-control" id="email" placeholder="Inserisci il tuo indirizzo email" required>
                             </div>
                             <div class="mb-5">
                                 <label id="job" class="form-label">Tipo di lavoro</label>
